@@ -3,6 +3,7 @@ from django.db import models
 
 
 class tests_to_run(models.Model):
+    name = models.CharField(max_length=250)
     test_name = models.CharField(max_length=250)
     source_ip = models.CharField(max_length=250)
     source_port = models.CharField(max_length=250)

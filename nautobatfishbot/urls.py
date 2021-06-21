@@ -7,7 +7,8 @@ urlpatterns = [
     # find URL with the python: reverse("plugins:nautobatfishbot:nautobatfishbot_homepage")
     #   resolve("/plugins/nautobatfishbot/nautobatfishbot_homepage/")
     #   can also be useful
-    path('nautobatfishbot/', views.nautobatfishbot, name="nautobatfishbot_homepage")]
+    path('nautobatfishbot/', views.nautobatfishbot, name="nautobatfishbot_homepage"),
+    path('nautobatfishbot/upload_tests', views.upload_tests, name="nautobatfishbot_upload_tests")]
 
     # rest framework would look like
     # reverse("plugins-api:nautobatfishbot-api:nautobatfishbot-list")

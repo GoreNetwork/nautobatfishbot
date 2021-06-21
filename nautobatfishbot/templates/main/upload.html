@@ -1,0 +1,11 @@
+{% extends 'main/home.html' %}
+
+{% block content %}
+<h2>upload</h2>
+<form method='post' enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type='file' name='tests_csv'>
+    <button type='submit'> Upload file</button>
+
+</form>
+{% endblock %}

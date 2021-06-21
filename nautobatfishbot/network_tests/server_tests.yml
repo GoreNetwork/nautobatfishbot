@@ -1,0 +1,30 @@
+--- 
+- dest_ip: "172.19.0.12"
+  dest_port: 22
+  source_ip: "172.16.1.1"
+  # source_port: 1337
+  test_name: "SSH to R5"
+  start_device: 'R4'
+
+- dest_ip: "172.19.0.12"
+  dest_port: 23
+  source_ip: "172.16.1.1"
+  # source_port: 1337
+  test_name: "Telnet to R5"
+  start_device: 'office_switch'
+
+
+- dest_ip: "10.0.0.6"
+  dest_port: 8080
+  source_ip: "172.19.0.12"
+  # source_port: 1337
+  test_name: "Leave the Network"
+  start_device: 'office_switch'
+
+
+- dest_ip: "172.16.1.1"
+  dest_port: 22
+  source_ip: "172.19.0.12"
+  # source_port: 1337
+  test_name: "outside to webserver on port 443"
+  start_device: 'office_switch'
