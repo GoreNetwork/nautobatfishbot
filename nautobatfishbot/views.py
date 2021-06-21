@@ -19,6 +19,7 @@ from .models import tests_to_run
 import csv
 from os import walk
 import yaml
+from django.template.response import TemplateResponse
 
 def upload_tests(request):
     if request.method == 'POST':
@@ -114,9 +115,17 @@ def nautobatfishbot(request):
     
     print ('\n\n\n\n\n\n')
     pprint (HttpResponse("BUG"))
-    return HttpResponse(all_output)
+    # return HttpResponse(all_output)
     print ('\n\n\n\n\n\n')
-    return HttpResponse("Working")
+    # return HttpResponse("Working")
+    return return_tests_data(requset, template_name='main/home.html', all_output)
+    # return render(request, 'main/home.html')
+
+def return_tests_data(requset, template_name='main/home.html', all_output):
+    args = {}
+    text = all_output
+    args['mytext'] = text
+    return TemplateResponse(request, template_name, args)
 
 def pprint_reachability(answer):
     output = "<h3>Test Name: "+  answer['test_name'].values[0]+'</h3>'
